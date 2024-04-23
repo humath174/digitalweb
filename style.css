@@ -1,0 +1,54 @@
+main {
+    margin-top: 58px; /* Correspond à la hauteur de la barre de navigation */
+    padding-top: 20px; /* Ajoutez un padding supplémentaire si nécessaire */
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin-top: 58px; /* Correspond à la hauteur de la barre de navigation */
+    padding-top: 20px; /* Ajoutez un padding supplémentaire si nécessaire */
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.navbar {
+    background-color: #3498db;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+h2, h4, p {
+    color: #333;
+}
+
+/* Ajoutez d'autres styles au besoin */
