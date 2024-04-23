@@ -1,58 +1,89 @@
-# Windmill Dashboard
+# PHP Dashboard Framework
 
-A multi theme, completely accessible, with components and pages examples, ready for production dashboard.
+## About
 
-🧪 [See it live](https://windmill-dashboard.vercel.app/)
+This repository contains sample dashboard application built on top of KoolReport's Dashboard Framework. The application act as demonstration of framework's features as well as examples for you to start with.
 
-- 🦮 Thoroughly accessible
-- 🌗 Light and dark themes
-- 💅 Styled with Tailwind CSS
-- 🧩 Various components
-- (soon React and Vue versions)
+## KoolReport's Dashboard
 
-## 🚀 Usage
+[KoolReport's Dashboard](https://www.koolreport.com/packages/dashboard) is a __PHP Dashboard Framework__ to facilitate dashboard construction. The framework is built on top of [KoolReport Pro](https://www.koolreport.com/get-koolreport-pro) which is general data reporting framework. Dashboard framework is added with following features:
 
-Clone or download this repo and everything you need is inside the `public` folder.
+1. Low-code orientation
+2. Built-in authentication
+3. Construct a beautiful admin panel
+4. Allow authorization from application to data field
+5. Work with MySQL, Postgres, SQL Server, SQLite
+6. Support data from CSV, Excel files
+7. Support Data Caching at widget level
+8. Support multi-languages
+9. Support Multi-themes
+10. Beautiful single page application
+11. Support lazy loading for widgets
+12. Flexible three levels organized menus
+13. Able to export to PDF, Excel, CSV and other formats
+14. Support master-detail data model
+15. Integrated with beautiful data visualization libraries: Google Chart, ChartJs, D3
+16. Work with other frameworks like Laravel, Codeigniter, Yii2, Symfony
 
-## 🦮 Accessibility
 
-This dashboard was developed with a11y in mind since the beginning.
+## Demonstration
 
-1. Every text passes the WCAG Level AA (at least)
-2. It is completely keyboard navigable
-3. I actually used [NVDA](https://www.nvaccess.org/) to read my screen during development
+You may view the result in here
 
-Everybody can benefit with good accessibility practices, like the modal, for example ([test it live](https://windmill-dashboard.vercel.app/modals.html)). It uses focus trap techniques to not loose focus when navigating via keyboard and thinking of mobile users with large screen devices, it is placed in the bottom of the screen.
+[![](https://www.koolreport.com/assets/images/editor/c5/image5ff5e2c35199e.png)](https://www.koolreport.com/dashboard/demo/)
 
-## 🌗 Multi theme
+Link: [https://www.koolreport.com/dashboard/demo/](https://www.koolreport.com/dashboard/demo/)
 
-It uses Tailwind CSS for styling, and some may say it is totally biased, but it uses the most simple theming plugin there is for it, [Tailwind Multi Theme plugin](https://github.com/estevanmaito/tailwindcss-multi-theme#tailwind-css-multi-theme) (made by me). The result is that, as with regular Tailwind, you have control over every style in your pages.
+## Documentation
 
-You can see that by navigating through the examples, changing theme and going visiting pages like login or create account, to see different images served for different themes.
+Full documentation can be found at
 
-Theme auto detection based on user's OS preferences and local settings storage are enabled by default.
+[https://www.koolreport.com/docs/dashboard/overview/](https://www.koolreport.com/docs/dashboard/overview/)
 
-## 🔮 Future
+## Installation
 
-In the next days I'll release the React _and_ Vue versions of it, soon after finishing these tasks:
+#### Step1: Clone our dashboard demo
 
-TODO
+To clone our dashboard demo, please run
 
-- [ ] Make charts accessible through hidden data
-- [ ] Refactor and split `shadow-outline-<color>` plugin
-- [ ] Paginate tables with Alpine
-- [ ] Focus first element when dropdowns are opened
-- [x] Add roles to the table
+```
+git clone git@github.com:koolreport/dashboard-demo.git
+```
 
-## OSS used
+#### Step 2: Add authentication
 
-(TODO: add links)
+Please login into our website, navigating the [My Licenses](https://www.koolreport.com/my-licensed-packages) and click to __[Get Token For Composer]__ button.
 
-- Tailwind CSS
-- Tailwind Multi Theme
-- Tailwind Custom Forms
-- PostCSS
-- Alpine.js
-- Chart.js (charts)
-- UI Faces (avatars)
-- Heroicons (icons)
+Near existed `composer.json`, please create `auth.json` and fill it with authentication information from Token For Composer pop up.
+
+#### Step 3: Run composer to update
+
+```
+composer update
+```
+
+*Note: Please make sure that you have subscription of KoolReport Pro and Dashboard Framework otherwise this command will not work.*
+
+#### Step 4: Install database (Optional)
+
+Please locate the `automaker.sql` inside `data` folder and then import it to your databases.
+
+*Note: We provided a public database connection so you may run example immediately, but if you want to use local database, you take this step and the step 5*
+
+#### Step 5: Provide connection inside `AutoMaker.php` (Optional)
+
+Please locate the `AutoMaker.php` and provide detail connection to your installed AutoMaker.
+
+*Note: If you take the step 4 then you should take this step, otherwise move to step 6*
+
+#### Step 6: Run
+
+You may run the demo now
+
+```
+http://localhost/dashboard-demo/
+```
+
+### Thank you!
+
+__*<3 koolreport team*__
