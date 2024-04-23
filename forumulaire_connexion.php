@@ -7,7 +7,10 @@ session_start();
 if (!isset($_SESSION['username'])) {
 
 // Paramètres de connexion à la base de données
-    include('back/database.php');
+$serveur = "86.248.100.25";
+$utilisateur = "nouveau_utilisateur";
+$motDePasse = "mot_de_passe";
+$baseDeDonnees = "dashboard";
 
 // Créer une connexion à la base de données
     $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
