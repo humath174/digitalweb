@@ -3,7 +3,7 @@
 include "back/database.php";
 
 // Connexion à la base de données
-$connexion = new mysqli($servername, $username, $password, $dbname);
+$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 
 // Vérification de la connexion
 if ($connexion->connect_error) {
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"];
     
     // Requête SQL pour récupérer l'utilisateur avec cet email
-    $selectQuery = "SELECT * FROM Users WHERE email = '$email'";
+    $selectQuery = "SELECT * FROM Users WHERE mail = '$email'";
     $result = $connexion->query($selectQuery);
     
     if ($result->num_rows > 0) {
