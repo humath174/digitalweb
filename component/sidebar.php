@@ -11,17 +11,17 @@
             </div>
             <div class=" bg-list d-flex flex-column align-items-center fw-bold gap-2 mt-4 ">
                 <ul class="d-flex flex-column list-unstyled">
-                        <li class="h7"><a class="nav-link text-dark" href="/bbra/welcome.php"><i
+                        <li class="h7"><a class="nav-link text-dark" href="/welcome.php"><i
                             class="fal fa-home-lg-alt me-2"></i> <span>Acceuil</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="/bbra/contact-rec.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="/contact-rec.php"><i
                                 class="fal fa-bookmark me-2"></i> <span>Contact</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="/bbra/devis-rec.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="/devis-rec.php"><i
                                 class="far fa-graduation-cap me-2"></i> <span>Devis</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="/bbra/dashboard-img.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="/dashboard-img.php"><i
                                 class="fal fa-usd-square me-2"></i> <span>Photo</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href="#"><i
                                 class="fal fa-file-chart-line me-2"></i> <span>Réalisation</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="/bbra/fichier_client.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="/fichier_client.php"><i
                                     class="fal fa-bookmark me-2"></i> <span>Fichier client</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href=""><i
                                 class="fal fa-sliders-v-square me-2"></i> <span>Garder</span></a></li>
