@@ -1,6 +1,6 @@
 <?php
 // Détails de connexion à la base de données
-include 'back/connexion.php';
+include 'back/database.php';
 
 // Connexion à la base de données
 $conn = new mysqli($servername, $username, $password, $dbname);
