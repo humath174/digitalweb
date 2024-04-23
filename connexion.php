@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"];
     
     // Requête SQL pour récupérer l'utilisateur avec cet email
-    $selectQuery = "SELECT * FROM Users WHERE mail = '$email'";
+    $selectQuery = "SELECT * FROM Users WHERE email = '$email'";
     $result = $connexion->query($selectQuery);
     
     if ($result->num_rows > 0) {
