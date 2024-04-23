@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])) {
 
 // Vérifier l'authenticité de l'utilisateur
 // Note : Ceci est un exemple très basique et ne doit pas être utilisé en production
-    $requete = "SELECT * FROM Users WHERE name = '$username' AND mdp = '$password'";
+    $requete = "SELECT * FROM Users WHERE email = '$username' AND password_hash = '$password'";
     $resultat = $connexion->query($requete);
 
     if ($resultat->num_rows > 0) {
