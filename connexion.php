@@ -6,7 +6,10 @@ if (!isset($_SESSION['username'])) {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Paramètres de connexion à la base de données
-        include('database.php');
+$serveur = "192.168.1.24:3306";
+$utilisateur = "nouveau_utilisateur";
+$motDePasse = "mot_de_passe";
+$baseDeDonnees = "dashboard";
 
         // Créer une connexion à la base de données
         $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
