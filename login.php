@@ -18,7 +18,7 @@ if ($connexion->connect_error) {
 }
 
 // Récupérer les données du formulaire
-$username = $_POST['username'];
+$username = $_POST['email'];
 $password = $_POST['password'];
 
 // Vérifier l'authenticité de l'utilisateur
