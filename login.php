@@ -6,7 +6,7 @@ session_start();
 
 if (!isset($_SESSION['username'])) {
 
-// Paramètres de connexion à la base de données
+// Vérifier la connexion à la base de données
 include('database.php');
 
 // Créer une connexion à la base de données
@@ -17,14 +17,15 @@ if ($connexion->connect_error) {
     die("La connexion à la base de données a échoué : " . $connexion->connect_error);
 }
 
-// Récupérer les données du formulaire
-$username = $_POST['email'];
-$password = $_POST['password'];
+// Récupérer les données du formulaire et échapper les caractères spéciaux pour éviter les injections SQL
+$username = $connexion->real_escape_string($_POST['email']);
+$password = $connexion->real_escape_string($_POST['password']);
 
-// Vérifier l'authenticité de l'utilisateur
-// Note : Ceci est un exemple très basique et ne doit pas être utilisé en production
-$requete = "SELECT * FROM Users WHERE username = '$username' AND password_hash = '$password'";
-$resultat = $connexion->query($requete);
+// Utiliser les requêtes préparées pour éviter les injections SQL
+$requete = $connexion->prepare("SELECT * FROM Users WHERE username = ? AND password_hash = ?");
+$requete->bind_param("ss", $username, $password);
+$requete->execute();
+$resultat = $requete->get_result();
 
 if ($resultat->num_rows > 0) {
     // Connexion réussie, enregistrer l'identifiant de l'utilisateur dans la session
@@ -33,11 +34,13 @@ if ($resultat->num_rows > 0) {
 
     // Rediriger vers une page sécurisée par exemple
     header("Location: welcome.php");
+    exit();
 } else {
     echo "Nom d'utilisateur ou mot de passe incorrect.";
 }
 
 // Fermer la connexion à la base de données
+$requete->close();
 $connexion->close();
 
 } else {
