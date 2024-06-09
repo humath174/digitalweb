@@ -14,7 +14,7 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté
-if (!isset($_SESSION['username']) || !isset($_SESSION['site_id'])) {
+if (!isset($_SESSION['username']) || !isset($_SESSION['entreprise_id'])) {
     header("Location: login.php");
     exit();
 }
