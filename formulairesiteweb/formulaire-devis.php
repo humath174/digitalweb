@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demande de Contact</title>
+    <title>Demande de Devis</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -68,7 +68,7 @@ $resultat = $requete->get_result();
                     echo '<td class="px-6 py-4">' . htmlspecialchars($ligne["mail"]) . '</td>';
                     echo '<td class="px-6 py-4">' . htmlspecialchars($ligne["tel"]) . '</td>';
                     echo '<td class="px-6 py-4">' . htmlspecialchars($ligne["description"]) . '</td>';
-                    echo '<td class="px-6 py-4">' . htmlspecialchars($ligne["contact_time"]) . '</td>';
+                    echo '<td class="px-6 py-4">' . htmlspecialchars($ligne["devis_time"]) . '</td>';
                     echo '<td class="px-6 py-4"><a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a></td>';
                     echo '</tr>';
                 }
