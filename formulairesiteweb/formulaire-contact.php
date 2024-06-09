@@ -36,8 +36,9 @@ if ($connexion->connect_error) {
 // Récupérer le site_id depuis la session
 $site_id = $_SESSION['entreprise_id'];
 
-// Préparer la requête pour récupérer les données filtrées par site_id
-$requete = $connexion->prepare("SELECT nom, prenom, mail, tel, description, contact_time FROM Contacts WHERE site_id = ?");
+// Préparer la requête pour récupérer les données filtrées par site_id et triées par contact_time
+$requete = $connexion->prepare("SELECT nom, prenom, mail, tel, description, contact_time FROM Contacts WHERE site_id = ? ORDER BY contact_time DESC");
+
 $requete->bind_param("i", $site_id);
 $requete->execute();
 $resultat = $requete->get_result();
