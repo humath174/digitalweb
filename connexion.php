@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Paramètres de connexion à la base de données
 $serveur = "192.168.1.24:3306";
-$utilisateur = "nouveau_utilisateur";
+$utilisateur = "nouvel_utilisateur";
 $motDePasse = "mot_de_passe";
 $baseDeDonnees = "dashboard";
 
