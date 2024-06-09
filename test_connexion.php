@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 // Inclure le fichier des paramètres de connexion à la base de données
 include('database.php');
 
