@@ -4,50 +4,6 @@ session_start();
 // Afficher le formulaire si l'utilisateur n'est pas connecté
 if (!isset($_SESSION['username'])) {
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Paramètres de connexion à la base de données
-$serveur = "192.168.1.24:3306";
-$utilisateur = "nouveau_utilisateur";
-$motDePasse = "mot_de_passe";
-$baseDeDonnees = "dashboard";
-
-        // Créer une connexion à la base de données
-        $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
-
-        // Vérifier la connexion
-        if ($connexion->connect_error) {
-            die("La connexion à la base de données a échoué : " . $connexion->connect_error);
-        }
-
-        // Récupérer les données du formulaire et échapper les caractères spéciaux pour éviter les injections SQL
-        $username = $connexion->real_escape_string($_POST['email']);
-        $password = $_POST['password'];
-
-        // Utiliser les requêtes préparées pour éviter les injections SQL
-        $requete = $connexion->prepare("SELECT * FROM Users WHERE username = ?");
-        $requete->bind_param("s", $username);
-        $requete->execute();
-        $resultat = $requete->get_result();
-
-        if ($resultat->num_rows > 0) {
-            // Vérifier le mot de passe
-            $user = $resultat->fetch_assoc();
-            if (password_verify($password, $user['password_hash'])) {
-                // Connexion réussie, enregistrer l'identifiant de l'utilisateur dans la session
-                $_SESSION['username'] = $username;
-                header("Location: welcome.php");
-                exit();
-            } else {
-                $error_message = "Nom d'utilisateur ou mot de passe incorrect.";
-            }
-        } else {
-            $error_message = "Nom d'utilisateur ou mot de passe incorrect.";
-        }
-
-        // Fermer la connexion à la base de données
-        $requete->close();
-        $connexion->close();
-    }
 ?>
 
 <!DOCTYPE html>
