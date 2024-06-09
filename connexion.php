@@ -1,16 +1,15 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
 session_start();
 
 // Afficher le formulaire si l'utilisateur n'est pas connecté
 if (!isset($_SESSION['username'])) {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        
         // Paramètres de connexion à la base de données
-        include('database.php');
+$serveur = "192.168.1.24:3306";
+$utilisateur = "nouveau_utilisateur";
+$motDePasse = "mot_de_passe";
+$baseDeDonnees = "dashboard";
 
         // Créer une connexion à la base de données
         $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
@@ -75,7 +74,7 @@ if (!isset($_SESSION['username'])) {
               <?php if (!empty($error_message)): ?>
                   <p class="text-red-500"><?php echo $error_message; ?></p>
               <?php endif; ?>
-              <form class="space-y-4 md:space-y-6" action="connexion.php" method="post">
+              <form class="space-y-4 md:space-y-6" action="login.php" method="post">
                   <div>
                       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Votre Email</label>
                       <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nom@societe.com" required="">
