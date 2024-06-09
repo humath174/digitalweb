@@ -20,7 +20,10 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['entreprise_id'])) {
 }
 
 // Paramètres de connexion à la base de données
-include('/database.php');
+$serveur = "localhost";
+$utilisateur = "nouvel_utilisateur";
+$motDePasse = "mot_de_passe";
+$baseDeDonnees = "dashboard";
 
 // Créer une connexion à la base de données
 $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
@@ -31,7 +34,7 @@ if ($connexion->connect_error) {
 }
 
 // Récupérer le site_id depuis la session
-$site_id = $_SESSION['site_id'];
+$site_id = $_SESSION['entreprise_id'];
 
 // Préparer la requête pour récupérer les données filtrées par site_id
 $requete = $connexion->prepare("SELECT nom, prenom, mail, tel, description, contact_time FROM Contacts WHERE site_id = ?");
