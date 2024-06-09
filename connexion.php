@@ -8,11 +8,9 @@ session_start();
 if (!isset($_SESSION['username'])) {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
         // Paramètres de connexion à la base de données
-$serveur = "192.168.1.24";
-$utilisateur = "nouvel_utilisateur";
-$motDePasse = "mot_de_passe";
-$baseDeDonnees = "dashboard";
+        include('database.php');
 
         // Créer une connexion à la base de données
         $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);

@@ -1,5 +1,5 @@
 <?php
-$serveur = "192.168.1.24";
+$serveur = "localhost";
 $utilisateur = "nouvel_utilisateur";
 $motDePasse = "mot_de_passe";
 $baseDeDonnees = "dashboard";

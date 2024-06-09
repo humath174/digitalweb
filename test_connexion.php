@@ -2,11 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-// Inclure le fichier des paramètres de connexion à la base de données
-$serveur = "localhost";
-$utilisateur = "nouvel_utilisateur";
-$motDePasse = "mot_de_passe";
-$baseDeDonnees = "dashboard";
+        // Paramètres de connexion à la base de données
+        include('database.php');
 
 // Essayer de se connecter à la base de données
 $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
