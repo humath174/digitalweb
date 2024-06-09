@@ -4,8 +4,8 @@ ini_set("display_errors", 1);
 
 // Inclure le fichier des paramètres de connexion à la base de données
 $serveur = "192.168.1.24";
-$utilisateur = "pma-admin";
-$motDePasse = "MotdePasseComplexe2";
+$utilisateur = "nouvel_utilisateur";
+$motDePasse = "mot_de_passe";
 $baseDeDonnees = "dashboard";
 
 // Essayer de se connecter à la base de données
