@@ -21,9 +21,11 @@ include('component/sidebar.php');
 ?>
 
 
+   
+
 </main>
-<script src="js/script.js"></script>
-<script src="js/bootstrap.bundle.js"></script>
+    <script src="../../bbra/js/script.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
