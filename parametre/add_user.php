@@ -5,6 +5,15 @@
 // Récupérer l'ID de l'entreprise de l'utilisateur connecté
 $entreprise_id = $_SESSION['entreprise_id'];
 
+
+// Avant d'insérer dans la base de données
+if (!isset($_SESSION['entreprise_id']) || empty($_SESSION['entreprise_id'])) {
+    // Gérer le cas où entreprise_id est vide ou non défini
+    echo "Erreur : entreprise_id est vide ou non défini.";
+    exit();
+}
+
+
 $serveur = "192.168.30.14";
 $utilisateur = "dashboard";
 $motDePasse = "sitedashboard";
