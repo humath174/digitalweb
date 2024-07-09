@@ -12,11 +12,11 @@ try {
     $pdo = new PDO("mysql:host=$serveur;dbname=$baseDeDonnees;charset=utf8mb4", $utilisateur, $motDePasse);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt_roles = $pdo->query("SELECT id, roles FROM role ORDER BY nom");
+    $stmt_roles = $pdo->query("SELECT id, roles FROM role ORDER BY roles");
     $roles = $stmt_roles->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
-    echo "Erreur de connexion à la base de données : " . $e->getMessage();
+    echo "Erreur de connexion à la base de données 1 : " . $e->getMessage();
 }
 ?>
 
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<script>alert("Utilisateur ajouté avec succès !");</script>';
 
     } catch (PDOException $e) {
-        echo "Erreur de connexion à la base de données : " . $e->getMessage();
+        echo "Erreur de connexion à la base de données 2 : " . $e->getMessage();
     }
 }
 ?>
