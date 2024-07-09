@@ -54,7 +54,7 @@ try {
                 <label class="block text-gray-700 font-bold mb-2" for="role">Rôle</label>
                 <select name="role" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     <?php foreach ($roles as $role): ?>
-                        <option value="<?= $role['id'] ?>"><?= $role['nom'] ?></option>
+                        <option value="<?= $role['id'] ?>"><?= $role['roles'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
