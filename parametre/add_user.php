@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['nom'])) {
+    header("Location: connexion.php");
+    exit();
+}
 
 
 // Récupérer l'ID de l'entreprise de l'utilisateur connecté

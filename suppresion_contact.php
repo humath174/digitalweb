@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['nom'])) {
+    header("Location: connexion.php");
+    exit();
+}
+
+
 // Vérification si l'ID de la demande de contact est envoyé en POST
 if (isset($_POST['demande_id'])) {
     // Récupération de l'ID de la demande de contact à supprimer
