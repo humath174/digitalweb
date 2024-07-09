@@ -18,6 +18,7 @@ $entreprise_id_session = 1; // Exemple
 
 include('component/database.php');
 
+
 try {
     $pdo = new PDO("mysql:host=$serveur;dbname=$baseDeDonnees", $utilisateur, $motDePasse);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -30,7 +31,25 @@ try {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $total_rows = $result['total_rows'];
 
-    echo "Nombre total de lignes pour l'entreprise ID $entreprise_id_session : $total_rows";
+
+
+} catch (PDOException $e) {
+    echo "Erreur de connexion à la base de données : " . $e->getMessage();
+}
+
+try {
+    $pdo = new PDO("mysql:host=$serveur;dbname=$baseDeDonnees", $utilisateur, $motDePasse);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Requête pour compter le nombre d'employés avec entreprise_id correspondant à celui de la session
+    $stmt = $pdo->prepare("SELECT COUNT(*) as total_rows FROM demande_contact WHERE entreprise_id = :entreprise_id");
+    $stmt->bindParam(':entreprise_id', $entreprise_id_session);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $total_rows2 = $result['total_rows'];
+
+
 
 } catch (PDOException $e) {
     echo "Erreur de connexion à la base de données : " . $e->getMessage();
@@ -60,13 +79,21 @@ try {
         <!-- Card 3 -->
         <div class="bg-white p-6 rounded-lg shadow-md">
             <h2 class="text-lg font-semibold text-gray-800 mb-2">Contact</h2>
-            <p class="text-3xl font-bold text-gray-900">256</p>
+            <p class="text-3xl font-bold text-gray-900">
+                <?php
+                echo "Nombre total de lignes pour l'entreprise ID $entreprise_id_session : $total_rows2";
+                ?>
+            </p>
         </div>
 
         <!-- Card 4 -->
         <div class="bg-white p-6 rounded-lg shadow-md">
             <h2 class="text-lg font-semibold text-gray-800 mb-2">Devis</h2>
-            <p class="text-3xl font-bold text-gray-900">$25,610</p>
+            <p class="text-3xl font-bold text-gray-900">
+                <?php
+                echo "Nombre total de lignes pour l'entreprise ID $entreprise_id_session : $total_rows";
+                ?>
+            </p>
         </div>
     </div>
 
