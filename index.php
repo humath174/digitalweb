@@ -144,7 +144,7 @@ try {
             <?php
 
             include('component/database.php');
-            
+
             // Connexion à la base de données
             $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 
@@ -156,8 +156,8 @@ try {
             if ($resultat->num_rows > 0) {
                 // Afficher les activités récentes
                 while ($row = $resultat->fetch_assoc()) {
-                    $description = htmlspecialchars($row['description']);
-                    $timestamp = strtotime($row['timestamp']);
+                    $description = htmlspecialchars($row['type_activite']);
+                    $timestamp = strtotime($row['date']);
                     $temps_ecoule = time() - $timestamp;
 
                     echo '<li class="py-4">';
