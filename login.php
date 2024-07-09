@@ -30,7 +30,7 @@ if (!isset($_SESSION['username'])) {
 
         // Enregistrer l'identifiant de l'utilisateur et l'ID de l'entreprise dans la session
         $_SESSION['nom'] = $utilisateur['nom'];
-        $_SESSION['entreprise_id'] = $utilisateur['site_id'];
+        $_SESSION['entreprise_id'] = $utilisateur['entreprise_id'];
 
         echo "Connexion réussie ! Bienvenue, $username.";
 
