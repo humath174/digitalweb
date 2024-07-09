@@ -25,7 +25,7 @@
             <?php
             session_start();
 
-            if (!isset($_SESSION['utilisateur_id']) || $_SESSION['role'] != 'admin') {
+            if (!isset($_SESSION['nom']) || $_SESSION['role'] != 'admin') {
                 header("Location: login.php");
                 exit();
             }

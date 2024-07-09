@@ -46,7 +46,16 @@ try {
     <title>Ajouter un Utilisateur</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 p-4">
+<body >
+
+<?php
+
+include('component/navbar.php');
+
+?>
+
+<div class="bg-gray-100 p-4">
+
 <div class="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden">
     <div class="py-4 px-6 bg-gray-200 border-b border-gray-300">
         <h2 class="text-xl font-semibold text-gray-800">Ajouter un Utilisateur</h2>
@@ -81,6 +90,7 @@ try {
             </div>
         </form>
     </div>
+</div>
 </div>
 </body>
 </html>
