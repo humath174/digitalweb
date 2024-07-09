@@ -137,7 +137,7 @@ try {
 
 <!-- Footer -->
 <footer class="bg-gray-200 text-center py-4">
-    <p class="text-gray-600">© 2024 Your Company. All rights reserved.</p>
+    <p class="text-gray-600">© 2024 DigitalWeb Dynamics. All rights reserved.</p>
 </footer>
 
 <!-- Script pour le menu déroulant -->

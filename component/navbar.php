@@ -16,11 +16,11 @@
                 </button>
                 <!-- Dropdown menu -->
                 <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden z-10 hidden">
-                    <a href="/formulaire-contact.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
-                    <a href="/formulairesiteweb/formulaire-devis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Devis</a>
+                    <a href="formulaire-contact.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
+                    <a href="formulaire-devis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Devis</a>
                 </div>
             </div>
-            <a href="#" class="text-gray-600 hover:text-gray-800">Parametre</a>
+            <a href="/parametre.php" class="text-gray-600 hover:text-gray-800">Paramètre</a>
             <div class="relative">
                 <button class="flex items-center text-gray-600 hover:text-gray-800 focus:outline-none">
                     Profile
@@ -31,7 +31,7 @@
                 <!-- Dropdown menu -->
                 <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden z-10 hidden">
                     <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profil</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Parametre</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Paramètre</a>
                     <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deconnexion</a>
                 </div>
             </div>
