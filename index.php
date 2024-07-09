@@ -128,6 +128,11 @@ try {
         </ul>
     </div>
 
+    <?php
+
+    echo "$entreprise_id_session";
+    ?>
+
 </main>
 
 <!-- Footer -->
