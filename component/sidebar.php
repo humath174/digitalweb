@@ -15,7 +15,9 @@
                 </div>
             </div>
             <div class="mr-2 ">
-                <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">Robert Jason</a>
+                <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">
+                    <?php echo htmlspecialchars($_SESSION['nom']); ?>
+                </a>
                 <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">SEO Manager</span>
             </div>
             </div>
@@ -101,6 +103,18 @@
                 <a href="javascript:;" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Dossier Client</a>
                 </span>
             </div>
+
+                <div class="block pt-5 pb-[.15rem]">
+                    <div class="px-4 py-[.65rem]">
+                        <span class="font-semibold text-[0.95rem] uppercase dark:text-neutral-500/80 text-secondary-dark">Parametre</span>
+                    </div>
+                </div>
+
+                <div>
+                <span class="select-none flex items-center px-4 py-[.775rem] cursor-pointer my-[.4rem] rounded-[.95rem]">
+                <a href="/component/logout.php" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Deconnexion</a>
+                </span>
+                </div>
 
 
             

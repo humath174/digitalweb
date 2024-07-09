@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_SESSION['username'])) {
     // Paramètres de connexion à la base de données
-    include('database.php');
+    include('component/database.php');
 
     // Créer une connexion à la base de données
     $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
@@ -19,7 +19,7 @@ if (!isset($_SESSION['username'])) {
     $password = $_POST['password'];
 
     // Préparer la requête pour éviter les injections SQL
-    $requete = $connexion->prepare("SELECT * FROM Users WHERE email = ? AND password_hash = ?");
+    $requete = $connexion->prepare("SELECT * FROM users WHERE email = ? AND mdp = ?");
     $requete->bind_param("ss", $username, $password);
     $requete->execute();
     $resultat = $requete->get_result();
@@ -29,7 +29,7 @@ if (!isset($_SESSION['username'])) {
         $utilisateur = $resultat->fetch_assoc();
 
         // Enregistrer l'identifiant de l'utilisateur et l'ID de l'entreprise dans la session
-        $_SESSION['username'] = $username;
+        $_SESSION['nom'] = $utilisateur['nom'];
         $_SESSION['entreprise_id'] = $utilisateur['site_id'];
 
         echo "Connexion réussie ! Bienvenue, $username.";

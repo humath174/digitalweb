@@ -1,8 +1,5 @@
 <?php
-$serveur = "192.168.30.14";
-$utilisateur = "dashboard";
-$motDePasse = "sitedashboard";
-$baseDeDonnees = "dashboard_site";
+include('component/database.php');
 
 // Créer une connexion
 $conn = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);

@@ -19,11 +19,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['entreprise_id'])) {
     exit();
 }
 
-// Paramètres de connexion à la base de données
-$serveur = "localhost";
-$utilisateur = "nouvel_utilisateur";
-$motDePasse = "mot_de_passe";
-$baseDeDonnees = "dashboard";
+include('component/database.php');
 
 // Créer une connexion à la base de données
 $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
@@ -42,7 +38,10 @@ $requete = $connexion->prepare("SELECT nom, prenom, mail, tel, description, cont
 $requete->bind_param("i", $site_id);
 $requete->execute();
 $resultat = $requete->get_result();
+include('component/navbar.php');
 ?>
+
+
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
