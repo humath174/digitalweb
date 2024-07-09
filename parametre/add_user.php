@@ -5,8 +5,11 @@
 // Récupérer l'ID de l'entreprise de l'utilisateur connecté
 $entreprise_id = $_SESSION['entreprise_id'];
 
+$serveur = "192.168.30.14";
+$utilisateur = "dashboard";
+$motDePasse = "sitedashboard";
+$baseDeDonnees = "dashboard_site";
 
-include('component/database.php');
 // Récupérer la liste des rôles depuis la base de données
 try {
     $pdo = new PDO("mysql:host=$serveur;dbname=$baseDeDonnees;charset=utf8mb4", $utilisateur, $motDePasse);
