@@ -1,20 +1,17 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+$serveur = "192.168.30.14";
+$utilisateur = "dashboard";
+$motDePasse = "sitedashboard";
+$baseDeDonnees = "dashboard_site";
 
-        // Paramètres de connexion à la base de données
-        include('database.php');
-
-// Essayer de se connecter à la base de données
-$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
+// Créer une connexion
+$conn = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 
 // Vérifier la connexion
-if ($connexion->connect_error) {
-    die("La connexion à la base de données a échoué : " . $connexion->connect_error);
-} else {
-    echo "Connexion à la base de données réussie !";
+if ($conn->connect_error) {
+    die("Échec de la connexion : " . $conn->connect_error);
 }
-
-// Fermer la connexion à la base de données
-$connexion->close();
+echo "Connexion réussie à la base de données";
 ?>
+
+
