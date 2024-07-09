@@ -16,7 +16,7 @@
                 </button>
                 <!-- Dropdown menu -->
                 <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden z-10 hidden">
-                    <a href="/formulairesiteweb/formulaire-contact.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
+                    <a href="/formulaire-contact.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
                     <a href="/formulairesiteweb/formulaire-devis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Devis</a>
                 </div>
             </div>

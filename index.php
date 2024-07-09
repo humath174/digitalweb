@@ -81,7 +81,7 @@ try {
             <h2 class="text-lg font-semibold text-gray-800 mb-2">Contact</h2>
             <p class="text-3xl font-bold text-gray-900">
                 <?php
-                echo "Nombre total de lignes pour l'entreprise ID $entreprise_id_session : $total_rows2";
+                echo "$total_rows2";
                 ?>
             </p>
         </div>
@@ -91,7 +91,7 @@ try {
             <h2 class="text-lg font-semibold text-gray-800 mb-2">Devis</h2>
             <p class="text-3xl font-bold text-gray-900">
                 <?php
-                echo "Nombre total de lignes pour l'entreprise ID $entreprise_id_session : $total_rows";
+                echo "$total_rows";
                 ?>
             </p>
         </div>
