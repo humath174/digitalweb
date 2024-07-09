@@ -22,7 +22,6 @@ if (!isset($_SESSION['nom'])) {
 include('component/navbar.php');
 
 
-// Simulons une session ouverte avec un entreprise_id (remplacez par votre logique de session réelle)
 $entreprise_id_session = $_SESSION['entreprise_id'];
 
 include('component/database.php');
@@ -43,7 +42,7 @@ try {
 
 
 } catch (PDOException $e) {
-    echo "Erreur de connexion à la base de données : " . $e->getMessage();
+    echo "Erreur de connexion à la base de données 1: " . $e->getMessage();
 }
 
 try {
@@ -61,8 +60,29 @@ try {
 
 
 } catch (PDOException $e) {
-    echo "Erreur de connexion à la base de données : " . $e->getMessage();
+    echo "Erreur de connexion à la base de données 2: " . $e->getMessage();
 }
+
+try {
+    $pdo = new PDO("mysql:host=$serveur;dbname=$baseDeDonnees", $utilisateur, $motDePasse);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Requête pour compter le nombre d'employés avec entreprise_id correspondant à celui de la session
+    $stmt = $pdo->prepare("SELECT COUNT(*) as total_rows FROM dossierclient WHERE entreprise_id = :entreprise_id");
+    $stmt->bindParam(':entreprise_id', $entreprise_id_session);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $total_rows3 = $result['total_rows'];
+
+
+
+} catch (PDOException $e) {
+    echo "Erreur de connexion à la base de données 3: " . $e->getMessage();
+}
+
+
+?>
 
 
 
@@ -76,7 +96,11 @@ try {
         <!-- Card 1 -->
         <div class="bg-white p-6 rounded-lg shadow-md">
             <h2 class="text-lg font-semibold text-gray-800 mb-2">Dossier Client</h2>
-            <p class="text-3xl font-bold text-gray-900">486</p>
+            <p class="text-3xl font-bold text-gray-900">
+                <?php
+                echo "$total_rows3";
+                ?>
+            </p>
         </div>
 
         <!-- Card 2 -->
@@ -114,28 +138,54 @@ try {
         </div>
     </div>
 
-    <!-- Recent Activity -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <h2 class="text-lg font-semibold text-gray-800 mb-4">Recent Activity</h2>
         <ul class="divide-y divide-gray-200">
-            <li class="py-4">
-                <p class="text-sm text-gray-600">User John Doe logged in</p>
-                <p class="text-xs text-gray-400">10 minutes ago</p>
-            </li>
-            <li class="py-4">
-                <p class="text-sm text-gray-600">New order placed by Jane Smith</p>
-                <p class="text-xs text-gray-400">1 hour ago</p>
-            </li>
-            <li class="py-4">
-                <p class="text-sm text-gray-600">Monthly report generated</p>
-                <p class="text-xs text-gray-400">2 hours ago</p>
-            </li>
-            <li class="py-4">
-                <p class="text-sm text-gray-600">User Bob Johnson logged in</p>
-                <p class="text-xs text-gray-400">3 hours ago</p>
-            </li>
+            <?php
+            // Connexion à la base de données
+            $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
+            
+            // Requête SQL pour récupérer les dernières activités
+            $sql = "SELECT type_activite, date FROM activite ORDER BY timestamp DESC LIMIT 5"; // Limiter à 5 activités récentes
+
+            $resultat = $connexion->query($sql);
+
+            if ($resultat->num_rows > 0) {
+                // Afficher les activités récentes
+                while ($row = $resultat->fetch_assoc()) {
+                    $description = htmlspecialchars($row['description']);
+                    $timestamp = strtotime($row['timestamp']);
+                    $temps_ecoule = time() - $timestamp;
+
+                    echo '<li class="py-4">';
+                    echo '<p class="text-sm text-gray-600">' . $description . '</p>';
+                    echo '<p class="text-xs text-gray-400">' . time_ago($temps_ecoule) . '</p>';
+                    echo '</li>';
+                }
+            } else {
+                echo "Aucune activité récente.";
+            }
+
+            // Fonction pour afficher le temps écoulé sous forme de "il y a X temps"
+            function time_ago($temps) {
+                $temps_unites = array("seconde", "minute", "heure", "jour", "semaine", "mois", "an");
+                $temps_diviseur = array(1, 60, 3600, 86400, 604800, 2630880, 31570560);
+
+                for ($i = 0; $temps >= $temps_diviseur[$i]; $i++) {
+                    $temps /= $temps_diviseur[$i];
+                }
+
+                $temps = round($temps);
+
+                if ($temps != 1) {
+                    $temps_unites[$i] .= "s";
+                }
+
+                return "$temps $temps_unites[$i] ago";
+            }            ?>
         </ul>
     </div>
+
 
     <?php
 

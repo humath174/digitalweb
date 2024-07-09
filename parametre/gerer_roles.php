@@ -30,7 +30,10 @@
                 exit();
             }
 
-            include('component/database.php');
+            $serveur = "192.168.30.14";
+            $utilisateur = "dashboard";
+            $motDePasse = "sitedashboard";
+            $baseDeDonnees = "dashboard_site";
 
             try {
                 $pdo = new PDO("mysql:host=$serveur;dbname=$baseDeDonnees;charset=utf8mb4", $utilisateur, $motDePasse);
