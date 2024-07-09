@@ -142,9 +142,12 @@ try {
         <h2 class="text-lg font-semibold text-gray-800 mb-4">Recent Activity</h2>
         <ul class="divide-y divide-gray-200">
             <?php
+
+            include('component/database.php');
+            
             // Connexion à la base de données
             $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
-            
+
             // Requête SQL pour récupérer les dernières activités
             $sql = "SELECT type_activite, date FROM activite ORDER BY timestamp DESC LIMIT 5"; // Limiter à 5 activités récentes
 
