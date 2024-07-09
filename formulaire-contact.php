@@ -7,6 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 p-4">
+<?php
+
+include('component/navbar.php');
+
+?>
+
 
 <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
     <div class="py-4 px-6 bg-gray-200 border-b border-gray-300">
@@ -51,8 +57,10 @@
                     echo "<td class='py-2 px-4 border-b border-gray-300'>" . htmlspecialchars($row['description']) . "</td>";
                     echo "<td class='py-2 px-4 border-b border-gray-300'>" . htmlspecialchars($row['date_creation']) . "</td>";
                     echo "<td class='py-2 px-4 border-b border-gray-300'>
-                                    <button class='bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded-md focus:outline-none'>Voir</button>
-                                    <button class='bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-md focus:outline-none ml-2'>Supprimer</button>
+                                   <form method='POST' action='suppresion_contact.php'>
+                                        <input type='hidden' name='demande_id' value='" . htmlspecialchars($row['id']) . "'>
+                                        <button type='submit' class='bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-md focus:outline-none'>Supprimer</button>
+                                    </form>
                                   </td>";
                     echo "</tr>";
                 }
