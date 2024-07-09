@@ -6,12 +6,15 @@
     <title>Liste des Demandes de Contact</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 p-4">
+<body >
 <?php
 
 include('component/navbar.php');
 
 ?>
+
+<div class="class="bg-gray-100 p-4">
+
 
 
 <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
@@ -72,6 +75,8 @@ include('component/navbar.php');
             </tbody>
         </table>
     </div>
+</div>
+
 </div>
 
 </body>

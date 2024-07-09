@@ -14,7 +14,7 @@ include('component/navbar.php');
 
 
 // Simulons une session ouverte avec un entreprise_id (remplacez par votre logique de session réelle)
-$entreprise_id_session = 1; // Exemple
+$entreprise_id_session = $_SESSION['entreprise_id'];
 
 include('component/database.php');
 

@@ -6,7 +6,7 @@
             <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
         </div>
         <div class="flex items-center space-x-4">
-            <a href="#" class="text-gray-600 hover:text-gray-800">Dashboard</a>
+            <a href="index.php" class="text-gray-600 hover:text-gray-800">Dashboard</a>
             <div class="relative">
                 <button class="flex items-center text-gray-600 hover:text-gray-800 focus:outline-none">
                     Formulaire
