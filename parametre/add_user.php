@@ -1,16 +1,18 @@
 <?php
 
-include('component/database.php');
+
 
 // Récupérer l'ID de l'entreprise de l'utilisateur connecté
 $entreprise_id = $_SESSION['entreprise_id'];
 
+
+include('component/database.php');
 // Récupérer la liste des rôles depuis la base de données
 try {
     $pdo = new PDO("mysql:host=$serveur;dbname=$baseDeDonnees;charset=utf8mb4", $utilisateur, $motDePasse);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt_roles = $pdo->query("SELECT id, nom FROM role ORDER BY nom");
+    $stmt_roles = $pdo->query("SELECT id, roles FROM role ORDER BY nom");
     $roles = $stmt_roles->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
@@ -77,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $role_id = $_POST['role'];
         $entreprise_id = $_POST['entreprise_id'];
 
-        $stmt = $pdo->prepare("INSERT INTO users (nom, email, mot_de_passe, role_id, entreprise_id) VALUES (:nom, :email, :mot_de_passe, :role_id, :entreprise_id)");
+        $stmt = $pdo->prepare("INSERT INTO users (nom, email, mdp, role, entreprise_id) VALUES (:nom, :email, :mot_de_passe, :role_id, :entreprise_id)");
         $stmt->execute([':nom' => $nom, ':email' => $email, ':mot_de_passe' => $mot_de_passe, ':role_id' => $role_id, ':entreprise_id' => $entreprise_id]);
 
         echo '<script>alert("Utilisateur ajouté avec succès !");</script>';

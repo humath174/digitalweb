@@ -7,6 +7,7 @@ if (isset($_POST['demande_id'])) {
 
     // Connexion à la base de données
     include('component/database.php');
+
     try {
         $pdo = new PDO("mysql:host=$serveur;dbname=$baseDeDonnees;charset=utf8mb4", $utilisateur, $motDePasse);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -23,3 +24,7 @@ if (isset($_POST['demande_id'])) {
         exit();
 
     } catch (PDOException $e)
+
+        ?>
+
+
