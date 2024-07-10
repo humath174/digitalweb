@@ -20,7 +20,7 @@ if (!isset($_SESSION['username'])) {
         $password = $_POST['password'];
 
         // Préparer la requête pour éviter les injections SQL
-        $requete = $connexion->prepare("SELECT id, nom, entreprise_id, mdp FROM users WHERE email = ?");
+        $requete = $connexion->prepare("SELECT id, nom, entreprise_id, mdp, role FROM users WHERE email = ?");
         $requete->bind_param("s", $username);
         $requete->execute();
         $resultat = $requete->get_result();

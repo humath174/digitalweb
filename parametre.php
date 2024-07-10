@@ -9,10 +9,10 @@ if (!isset($_SESSION['nom'])) {
 // Avant d'insérer dans la base de données
 if (!isset($_SESSION['role']) || empty($_SESSION['role'])) {
     // Gérer le cas où entreprise_id est vide ou non défini
-    echo "Erreur : entreprise_id est vide ou non défini.";
+    echo "Erreur : role est vide ou non défini.";
 
     exit();
-    
+
 }
 
 
