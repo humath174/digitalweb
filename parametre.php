@@ -5,6 +5,17 @@ if (!isset($_SESSION['nom'])) {
     header("Location: connexion.php");
     exit();
 }
+
+// Avant d'insérer dans la base de données
+if (!isset($_SESSION['role']) || empty($_SESSION['role'])) {
+    // Gérer le cas où entreprise_id est vide ou non défini
+    echo "Erreur : entreprise_id est vide ou non défini.";
+
+    exit();
+    
+}
+
+
 ?>
 
 <!DOCTYPE html>
