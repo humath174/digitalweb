@@ -38,17 +38,21 @@ if (!isset($_SESSION['role']) || empty($_SESSION['role'])) {
         <div class="p-6 grid grid-cols-3 gap-4">
             <?php if ($_SESSION['role'] == 1 || $_SESSION['role'] == 2): ?>
                 <!-- Card pour ajouter un utilisateur -->
-                <a href="parametre/add_user.php" class="block p-6 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700">
+                <a href="parametre/gestion_utilisateur/add_user.php" class="block p-6 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700">
                     <h3 class="text-lg font-semibold">Ajouter un utilisateur</h3>
                     <p>Ajouter un nouvel utilisateur à la base de données.</p>
                 </a>
                 <!-- Card pour gérer les utilisateurs -->
-                <a href="parametre/gerer_roles.php" class="block p-6 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-700">
+                <a href="parametre/gestion_utilisateur/gerer_roles.php" class="block p-6 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-700">
                     <h3 class="text-lg font-semibold">Gérer les utilisateurs</h3>
                     <p>Voir et modifier les informations des utilisateurs existants.</p>
                 </a>
             <?php endif; ?>
             <!-- Ajouter d'autres cards si nécessaire -->
+            <a href="parametre/fiche_etablisement" class="block p-6 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-700">
+                <h3 class="text-lg font-semibold">Fiche établisement</h3>
+                <p>Voir et modifier les informations de votre fiche établisement.</p>
+            </a>
             <a href="#" class="block p-6 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-700">
                 <h3 class="text-lg font-semibold">Autre fonctionnalité</h3>
                 <p>Ajouter une autre fonctionnalité ici.</p>

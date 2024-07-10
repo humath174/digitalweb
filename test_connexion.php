@@ -1,14 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
 <?php
-include('component/database.php');
 
-// Créer une connexion
-$conn = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
+include('component/navbar.php');
 
-// Vérifier la connexion
-if ($conn->connect_error) {
-    die("Échec de la connexion : " . $conn->connect_error);
-}
-echo "Connexion réussie à la base de données";
 ?>
+
+
+
+
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-200 text-center py-4">
+    <p class="text-gray-600">© 2024 DigitalWeb Dynamics. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
 
 

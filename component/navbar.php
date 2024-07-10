@@ -1,40 +1,85 @@
-<!-- Header -->
-<header class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div class="flex items-center">
-            <img src="logo.png" alt="Logo" class="h-8 w-auto mr-4">
-            <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+<div class="bg-white">
+
+    <style>
+        @media only screen and (min-width: 768px){
+            .parent:hover .child {
+                opacity:1;
+                height:auto;
+                overflow:none;
+                transform: translateY(0);
+            }
+            .child {
+                opacity:0;
+                height:0;
+                overflow:hidden;
+                transform: translateY(-10%);
+            }
+        }
+
+    </style>
+
+    <nav class="flex px-4 border-b md:shadow-lg items-center relative">
+        <div class="text-lg font-bold md:py-0 py-4">
+            Logo
         </div>
-        <div class="flex items-center space-x-4">
-            <a href="index.php" class="text-gray-600 hover:text-gray-800">Dashboard</a>
-            <div class="relative">
-                <button class="flex items-center text-gray-600 hover:text-gray-800 focus:outline-none">
-                    Formulaire
-                    <svg class="ml-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <!-- Dropdown menu -->
-                <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden z-10 hidden">
-                    <a href="formulaire-contact.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
-                    <a href="formulaire-devis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Devis</a>
-                </div>
-            </div>
-            <a href="/parametre.php" class="text-gray-600 hover:text-gray-800">Paramètre</a>
-            <div class="relative">
-                <button class="flex items-center text-gray-600 hover:text-gray-800 focus:outline-none">
-                    Profile
-                    <svg class="ml-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <!-- Dropdown menu -->
-                <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden z-10 hidden">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profil</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Paramètre</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deconnexion</a>
-                </div>
-            </div>
+        <ul class="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0">
+            <li>
+                <a href="/index.php" class="flex md:inline-flex p-4 items-center hover:bg-gray-50">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="relative parent">
+                <a href="#" class="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2">
+                    <span>Formulaire</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+                </a>
+                <ul class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b ">
+                    <li>
+                        <a href="/formulaire-contact.php" class="flex px-4 py-3 hover:bg-gray-50">
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/formulaire-devis.php" class="flex px-4 py-3 hover:bg-gray-50">
+                            Devis
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="/parametre" class="flex md:inline-flex p-4 items-center hover:bg-gray-50">
+                    <span>Entreprise</span>
+                </a>
+            </li>
+            <li class="relative parent">
+                <a href="#" class="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2">
+                    <span>Compte</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+                </a>
+                <ul class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:shadow-lg md:rounded-b ">
+                    <li>
+                        <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
+                            Parametre
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/component/logout.php" class="flex px-4 py-3 hover:bg-gray-50">
+                            Logout
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+        </ul>
+
+
+
+        <div class="ml-auto md:hidden text-gray-500 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
         </div>
-    </div>
-</header>
+    </nav>
+</div>
