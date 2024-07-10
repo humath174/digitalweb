@@ -34,6 +34,8 @@ if (!isset($_SESSION['username'])) {
                 // Mot de passe correct, enregistrer les informations dans la session
                 $_SESSION['nom'] = $utilisateur['nom'];
                 $_SESSION['entreprise_id'] = $utilisateur['entreprise_id'];
+                $_SESSION['role'] = $utilisateur['role']; // Stocker le rôle de l'utilisateur dans la session
+
 
                 echo "Connexion réussie ! Bienvenue, " . $_SESSION['nom'] . ".";
 
