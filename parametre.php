@@ -25,7 +25,7 @@ if (!isset($_SESSION['nom'])) {
             <h2 class="text-xl font-semibold text-gray-800">Dashboard</h2>
         </div>
         <div class="p-6 grid grid-cols-3 gap-4">
-            <?php if ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
+            <?php if ($_SESSION['role'] == 1 || $_SESSION['role'] == 2): ?>
                 <!-- Card pour ajouter un utilisateur -->
                 <a href="parametre/add_user.php" class="block p-6 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700">
                     <h3 class="text-lg font-semibold">Ajouter un utilisateur</h3>
